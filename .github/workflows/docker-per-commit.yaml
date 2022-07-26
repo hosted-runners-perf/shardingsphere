@@ -17,17 +17,7 @@
 name: publish-docker
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - '**/pom.xml'
-      - '**/src/main/**'
-      - '!examples/**'
-      - '!shardingsphere-distribution/**'
-      - 'shardingsphere-distribution/shardingsphere-proxy-distribution/**'
-      - '!shardingsphere-test/**'
-      - '!*.md'
+  workflow_dispatch:
 
 env:
   HUB: ghcr.io/apache/shardingsphere

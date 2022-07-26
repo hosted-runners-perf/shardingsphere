@@ -18,42 +18,7 @@
 name: Scaling Integration Test
 
 on:
-  push:
-    branches: [ master, dev ]
-    paths:
-      - '.github/workflows/it-scaling.yml'
-      - 'shardingsphere-infra/shardingsphere-infra-common/src/main/**'
-      - 'shardingsphere-mode/**/src/main/**'
-      - 'shardingsphere-proxy/**/src/main/**'
-      - 'shardingsphere-jdbc/shardingsphere-jdbc-core/src/main/**'
-      - '**/*-distsql*/**/src/main/**'
-      - 'shardingsphere-kernel/shardingsphere-data-pipeline/**/src/main/**'
-      - 'shardingsphere-features/**/src/main/**/scaling/**'
-      - '**/src/main/**/data/pipeline/**'
-      - '**/src/main/resources/META-INF/services/*.data.pipeline.*'
-      - '!shardingsphere-test/**'
-      - 'shardingsphere-test/shardingsphere-integration-test/**'
-      - '!shardingsphere-test/shardingsphere-integration-test/shardingsphere-integration-test-suite/**'
-      - '!*.md'
-  pull_request:
-    branches: [ master ]
-    paths:
-      - '.github/workflows/it-scaling.yml'
-      - 'shardingsphere-infra/shardingsphere-infra-common/src/main/**'
-      - 'shardingsphere-mode/**/src/main/**'
-      - 'shardingsphere-proxy/**/src/main/**'
-      - 'shardingsphere-jdbc/shardingsphere-jdbc-core/src/main/**'
-      - '**/*-distsql*/**/src/main/**'
-      - 'shardingsphere-kernel/shardingsphere-data-pipeline/**/src/main/**'
-      - 'shardingsphere-features/**/src/main/**/scaling/**'
-      - '**/src/main/**/data/pipeline/**'
-      - '**/src/main/resources/META-INF/services/*.data.pipeline.*'
-      - '!shardingsphere-test/**'
-      - 'shardingsphere-test/shardingsphere-integration-test/**'
-      - '!shardingsphere-test/shardingsphere-integration-test/shardingsphere-integration-test-suite/**'
-      - '!*.md'
-  schedule:
-    - cron: '0 22 */1 * *'  # once a day. UTC time
+  workflow_dispatch:
 
 concurrency:
   group: it-scaling-${{ github.workflow }}-${{ github.ref }}

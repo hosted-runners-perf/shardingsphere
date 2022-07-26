@@ -18,17 +18,7 @@
 name: Transaction Integration Test
 
 on:
-  push:
-    branches: [ master, dev ]
-
-  pull_request:
-    branches: [ master ]
-    paths:
-      - '!examples/**'
-      - '!shardingsphere-test/**'
-      - 'shardingsphere-test/shardingsphere-integration-test/**'
-      - '!shardingsphere-test/shardingsphere-integration-test/shardingsphere-integration-test-suite/**'
-      - '!*.md'
+  workflow_dispatch:
 
 concurrency:
   group: it-transaction-${{ github.workflow }}-${{ github.ref }}

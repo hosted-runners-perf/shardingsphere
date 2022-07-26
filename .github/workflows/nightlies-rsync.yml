@@ -16,8 +16,7 @@
 #
 
 on:
-  schedule:
-    - cron: '0 19 */1 * *'  # once a day. UTC time
+  workflow_dispatch:
 
 jobs:
   upload_to_nightlies:

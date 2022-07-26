@@ -18,12 +18,7 @@
 name: ISSUE Standardized Process
 
 on:
-  schedule:
-    - cron: '0 16 */1 * *'  # once a day
-  issue_comment:
-    types: [created,edited]
-  issues:
-    types: [labeled,reopened]
+  workflow_dispatch:
 
 jobs:
   comment-action:
