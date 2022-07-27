@@ -62,7 +62,7 @@ jobs:
         run: ./mvnw -B -f examples/pom.xml clean package -DskipTests
 
   ubuntu:
-    name: JDK 8 - on ubuntu-latest
+    name: JDK 8 - on ubuntu-22.04
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
