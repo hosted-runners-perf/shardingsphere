@@ -90,10 +90,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: ${{ matrix.java.version }}
-      - name: Build with Maven
-        run: echo y | ./mvnw -B --no-transfer-progress clean install ${{ matrix.java.maven_args }}
-      - name: Build examples with Maven
-        run: echo y | ./mvnw -B -f examples/pom.xml clean package -DskipTests
+      - name: Build
+        run: |
+          echo y | ./mvnw -B --no-transfer-progress clean install ${{ matrix.java.maven_args }}
+          echo y | ./mvnw -B -f examples/pom.xml clean package -DskipTests
   
   macos:
     name: macos
@@ -120,10 +120,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: ${{ matrix.java.version }}
-      - name: Build with Maven
-        run: echo y | ./mvnw -B --no-transfer-progress clean install ${{ matrix.java.maven_args }}
-      - name: Build examples with Maven
-        run: echo y | ./mvnw -B -f examples/pom.xml clean package -DskipTests
+      - name: Build
+        run: |
+          echo y | ./mvnw -B --no-transfer-progress clean install ${{ matrix.java.maven_args }}
+          echo y | ./mvnw -B -f examples/pom.xml clean package -DskipTests
   
   shardingsphere-example-generator:
     name: shardingsphere example generator
@@ -166,7 +166,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 8
-      - name: Test with Maven
+      - name: Test
         run: ./mvnw -B --no-transfer-progress clean install cobertura:cobertura -Dmaven.javadoc.skip=true
       - name: Upload to Codecov
         run: bash <(curl -s https://codecov.io/bash)
