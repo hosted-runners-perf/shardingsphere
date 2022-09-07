@@ -23,8 +23,8 @@ name: Continuous Integration
 on:
   workflow_dispatch:
   
-  schedule:
-    - cron: "*/30 * * * *"
+#   schedule:
+#     - cron: "*/30 * * * *"
 
 env:
   MAVEN_OPTS: -Dhttp.keepAlive=false -Dmaven.wagon.http.pool=false -Dmaven.wagon.http.retryHandler.class=standard -Dmaven.wagon.http.retryHandler.count=3
